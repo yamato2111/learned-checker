@@ -29,7 +29,7 @@ public class WordsDAO extends DAO {
 		
 		Connection con = getConnection();
 		
-		PreparedStatement st = con.prepareStatement("select * from noun where name like ?;");
+		PreparedStatement st = con.prepareStatement("select * from words where name like ?;");
 		//st.setString(1, table);
 		st.setString(1, "%" + keyword + "%");
 		ResultSet rs = st.executeQuery();

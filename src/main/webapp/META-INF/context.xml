@@ -3,7 +3,7 @@
 
 <Context reloadable="true">
 <Resource
-		name="jdbc/test"
+		name="jdbc/words"
 		auth="Container"
 		type="javax.sql.DataSource"
 		driverClassName="com.mysql.cj.jdbc.Driver"

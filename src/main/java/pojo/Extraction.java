@@ -12,7 +12,7 @@ import com.atilika.kuromoji.ipadic.Tokenizer;
 public class Extraction {
 	
 	// 抽出対象の品詞
-	String[] posArray = {"名詞", "形容詞", "動詞", "連体詞"}; //TODO: プロパティファイルに移す
+	String[] posArray = {"名詞", "形容詞", "動詞", "連体詞", "副詞"}; //TODO: プロパティファイルに移す
     
 	public List<String> extraction(String sentence) {
 	    Tokenizer tokenizer = new Tokenizer();
