@@ -1,6 +1,6 @@
 package check;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +25,7 @@ public class SetUserInputAction extends Action {
         
         // ユーザ入力情報セット
         UserSetting userSetting = new UserSetting();
-        userSetting.setLevel(userInputLevel);
+        userSetting.setLv(userInputLevel);
         userSetting.setLesson(userInputLesson);
         userSetting.setPart(userInputPart);
         
@@ -36,11 +36,11 @@ public class SetUserInputAction extends Action {
         
         // 比較処理
         Compar comp = new Compar();
-        HashMap<String, ResultData> resultMap = new HashMap<>();
-        resultMap = comp.learnedMaping(extractionResult, userSetting);
+        List<ResultData> resultList = new ArrayList<>();
+        resultList = comp.learnedMaping(extractionResult, userSetting);
         
         // test cpde
-        for (ResultData data : resultMap.values()) {
+        for (ResultData data : resultList) {
         	System.out.println(data);
         	System.out.println(data.getName());
         	System.out.println(data.getLv());
@@ -50,7 +50,8 @@ public class SetUserInputAction extends Action {
         }
         
         // リクエスト属性にセット
-        request.setAttribute("resultMap", resultMap);
+        request.setAttribute("userSetting", userSetting);
+        request.setAttribute("resultList", resultList);
         
         return "/WEB-INF/check/result-test.jsp";
     }

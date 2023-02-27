@@ -2,7 +2,7 @@
 
 package pojo;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 
 import bean.DataFromDb;
@@ -12,8 +12,8 @@ import dao.WordsDAO;
 
 public class Compar {
 
-    public HashMap<String, ResultData> learnedMaping(List<String> extractionResult, UserSetting userSetting) {
-    	HashMap<String, ResultData> resultMap = new HashMap<>();
+    public List<ResultData> learnedMaping(List<String> extractionResult, UserSetting userSetting) {
+    	List<ResultData> resultList = new ArrayList<>();
     	
     	try {
     		System.out.println(extractionResult);
@@ -26,7 +26,7 @@ public class Compar {
 				
 				List<DataFromDb> dataList = dao.search(word);
 				for (DataFromDb dataFromDb : dataList) {
-					if (dataFromDb.getLv() > userSetting.getLevel()) {
+					if (dataFromDb.getLv() > userSetting.getLv()) {
 				    	resultData.setIsAlreadyLeaned(false);
 				    } else if (dataFromDb.getLesson() > userSetting.getLesson()) {
 				    	resultData.setIsAlreadyLeaned(false);
@@ -40,7 +40,7 @@ public class Compar {
 					    resultData.setLesson(dataFromDb.getLesson()); System.out.println(resultData.getLesson());
 					    resultData.setPart(dataFromDb.getPart()); System.out.println(resultData.getPart());
 					    System.out.println(resultData.getIsAlreadyLeaned());
-					    resultMap.put(word, resultData);
+					    resultList.add(resultData);
 					}
 	    		}
 			} catch (Exception e) {
@@ -48,6 +48,6 @@ public class Compar {
 				e.printStackTrace();
 			}
     		
-    	return resultMap;
+    	return resultList;
     }
 }

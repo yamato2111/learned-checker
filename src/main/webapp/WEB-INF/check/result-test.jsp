@@ -9,14 +9,23 @@
 </head>
 <body>
 
-<h1>FUCK</h1>
-<p>レベル：${userSentence.level}</p>
-<p>課：${userSentence.lesson}</p>
-<p>回：${userSentence.part}</p>
-<p>文：${userSentence.sentence}</p>
+<h1>RESULT</h1>
+<p>あなたの授業実施日
+初級${userSetting.getLv()}
+${userSetting.getLesson()}課
+${userSetting.getPart()}回目
+</p>
 
-<c:forEach var="word" items="${resultList}">
-<c:out value="${word}" />
+<c:forEach var="result" items="${resultList}">
+単語：${result.getName()}
+初級${result.getLv()}
+${result.getLesson()}課
+${result.getPart()}回目
+	<c:choose>
+		<c:when test="${result.getIsAlreadyLeaned() == true}">既習</c:when>
+		<c:when test="${result.getIsAlreadyLeaned() == false}">未習</c:when>
+	</c:choose>
+	<br>
 </c:forEach>
 </body>
 </html>

@@ -4,12 +4,12 @@ package bean;
 
 public class UserSetting implements java.io.Serializable {
 
-    private int level;
+    private int lV;
     private int lesson;
     private int part;
 
-    public int getLevel() {
-        return level;
+    public int getLv() {
+        return lV;
     }
 
     public int getLesson() {
@@ -20,8 +20,8 @@ public class UserSetting implements java.io.Serializable {
         return part;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
+    public void setLv(int lV) {
+        this.lV = lV;
     }
 
     public void setLesson(int lesson) {
