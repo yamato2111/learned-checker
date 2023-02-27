@@ -32,11 +32,22 @@ public class SetUserInputAction extends Action {
         // 比較対象の単語の抽出
         Extraction extract = new Extraction();
         List<String> extractionResult = extract.extraction(sentence);
+        System.out.println("setuserinput.java :35 :"+extractionResult);
         
         // 比較処理
         Compar comp = new Compar();
         HashMap<String, ResultData> resultMap = new HashMap<>();
         resultMap = comp.learnedMaping(extractionResult, userSetting);
+        
+        // test cpde
+        for (ResultData data : resultMap.values()) {
+        	System.out.println(data);
+        	System.out.println(data.getName());
+        	System.out.println(data.getLv());
+        	System.out.println(data.getLesson());
+        	System.out.println(data.getPart());
+        	System.out.println(data.getIsAlreadyLeaned());
+        }
         
         // リクエスト属性にセット
         request.setAttribute("resultMap", resultMap);

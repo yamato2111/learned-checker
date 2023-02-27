@@ -3,7 +3,7 @@ package bean;
 public class ResultData implements java.io.Serializable {
 
 	private String name;
-    private int level;
+    private int lV;
     private int lesson;
     private int part;
     private boolean isAlreadyLearned;
@@ -14,8 +14,8 @@ public class ResultData implements java.io.Serializable {
     	return name;
     }
     
-    public int getLevel() {
-        return level;
+    public int getLv() {
+        return lV;
     }
 
     public int getLesson() {
@@ -36,8 +36,8 @@ public class ResultData implements java.io.Serializable {
     	this.name = name;
     }
     
-    public void setLevel(int level) {
-        this.level = level;
+    public void setLv(int lV) {
+        this.lV = lV;
     }
 
     public void setLesson(int lesson) {

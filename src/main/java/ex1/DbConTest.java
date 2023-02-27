@@ -1,17 +1,13 @@
-package ex1;
+/*package ex1;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import bean.DataFromDb;
-import dao.WordsDAO;
 
 @WebServlet(urlPatterns= {"/ex1/DbConTest"})
 public class DbConTest extends HttpServlet {
@@ -31,11 +27,10 @@ public class DbConTest extends HttpServlet {
 		try {
 			// test code
 			String table = "noun";
-			String keyword = "漢字";
 			
 			// /testcode
-			WordsDAO dao = new WordsDAO();
-			List<DataFromDb> list = dao.search(table, keyword);
+			//WordsDAO dao = new WordsDAO();
+			//List<DataFromDb> list = dao.search(keyword);
 			
 			for (DataFromDb data : list) {
 				out.println(data.getName());
@@ -51,3 +46,4 @@ public class DbConTest extends HttpServlet {
         out.println("</html>");		
 	}
 }
+*/
