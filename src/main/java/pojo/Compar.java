@@ -19,12 +19,12 @@ public class Compar {
     		DataFromDb dataFromDb = new DataFromDb();
     		//TODO DBから当該インスタンスのデータを取得
     		// test code
-    		dataFromDb.setLevel(1);
+    		dataFromDb.setLv(1);
     		dataFromDb.setLesson(2);
     		dataFromDb.setPart(3);
     		// test code
     		
-	    	if (dataFromDb.getLevel() > userSetting.getLevel()) {
+	    	if (dataFromDb.getLv() > userSetting.getLevel()) {
 	    		resultData.setIsAlreadyLeaned(false);
 	    	} else if (dataFromDb.getLesson() > userSetting.getLesson()) {
 	    		resultData.setIsAlreadyLeaned(false);
@@ -35,7 +35,7 @@ public class Compar {
 	    	}
 	    	
 	    	resultData.setName(word);
-	    	resultData.setLevel(dataFromDb.getLevel());
+	    	resultData.setLevel(dataFromDb.getLv());
 	    	resultData.setLesson(dataFromDb.getLesson());
 	    	resultData.setPart(dataFromDb.getPart());
 	    	resultMap.put(word, resultData);
