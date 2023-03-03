@@ -10,6 +10,7 @@
 <body>
 
 <h1>RESULT</h1>
+<p>${sentence}</p>
 <p>あなたの授業実施日:
 初級${userSetting.getLv()} - 
 ${userSetting.getLesson()}課 - 

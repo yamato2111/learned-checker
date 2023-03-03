@@ -1,51 +1,33 @@
-
-
-
-
-
-
-// TODO: DBに該当データがなかった場合の処理を実装する
-
-
-
-
-
-
-
-
 package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 
 import bean.DataFromDb;
 
 public class WordsDAO extends DAO {
-	public List<DataFromDb> search(String keyword) throws Exception {
-		List<DataFromDb> list = new ArrayList<>();
+	public DataFromDb search(String keyword) throws Exception {
+		
+		DataFromDb dbdata = new DataFromDb();
 		
 		Connection con = getConnection();
-		
 		PreparedStatement st = con.prepareStatement("select * from words where name like ?;");
-		//st.setString(1, table);
-		st.setString(1, "%" + keyword + "%");
+		st.setString(1, keyword);
 		ResultSet rs = st.executeQuery();
 		
-		while (rs.next()) {
-			DataFromDb dbdata = new DataFromDb();
+		if (rs.next()) {
 			dbdata.setName(rs.getString("name"));
 			dbdata.setLv(rs.getInt("Lv"));
 			dbdata.setLesson(rs.getInt("lesson"));
 			dbdata.setPart(rs.getInt("part"));
-			list.add(dbdata);
+		} else {
+			// TODO データなしの結果を返す処理
 		}
 		
 		st.close();
 		con.close();
 		
-		return list;
+		return dbdata;
 	}
 }
