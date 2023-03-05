@@ -16,41 +16,24 @@ public class Compar {
 
 		try {
 			for (String word : extractionResult) {
+				// インスタンス生成
 				ResultData resultData = new ResultData();
 				WordsDAO dao = new WordsDAO();
 				DataFromDb dataFromDb = dao.search(word);
+				int dbNumber = dataFromDb.getNumber();
 				
-				System.out.println("今からチェックする単語：" + word);
-				System.out.println("dataFromDb.getLv()" + dataFromDb.getLv());
-				System.out.println("userSetting.getLv()" + userSetting.getLv());
-				System.out.println("dataFromDb.getLesson()" + dataFromDb.getLesson());
-				System.out.println("userSetting.getLesson()" + userSetting.getLesson());
-				System.out.println("dataFromDb.getPart()" + dataFromDb.getPart());
-				System.out.println("userSetting.getPart()" + userSetting.getPart());
+				UserNumberGenerator unGenerator = new UserNumberGenerator();
 				
-				boolean resultLv = dataFromDb.getLv() > userSetting.getLv();
-				System.out.println("resultLv:" + resultLv);
-				boolean resultLesson = dataFromDb.getLesson() > userSetting.getLesson();
-				System.out.println("resultLesson:" + resultLesson);
-				boolean resultPart = dataFromDb.getPart() > userSetting.getPart();
-				System.out.println("resultPart:" + resultPart);
-				
-				if (dataFromDb.getLv() > userSetting.getLv()) {
-					resultData.setIsAlreadyLeaned(false);
-				} else if (dataFromDb.getLesson() > userSetting.getLesson()) {
-					resultData.setIsAlreadyLeaned(false);
-				} else if (dataFromDb.getPart() > userSetting.getPart()) {
-					resultData.setIsAlreadyLeaned(false);
-				} else {
-					resultData.setIsAlreadyLeaned(true);
-				}
+				// 既習未習チェック
+				int userNumber = unGenerator.userNumberGenerator(userSetting);
+				boolean checkResult = Checker.isAlreadyLearned(userNumber, dbNumber);
 				
 				resultData.setName(word);
 				resultData.setLv(dataFromDb.getLv());
 				resultData.setLesson(dataFromDb.getLesson());
 				resultData.setPart(dataFromDb.getPart());
+				resultData.setIsAlreadyLeaned(checkResult);
 				resultList.add(resultData);
-
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

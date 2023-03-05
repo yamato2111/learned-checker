@@ -1,16 +1,17 @@
+// 比較のためのユーザ側番号を生成する
+
 package pojo;
 
 import bean.UserSetting;
 
-public class UserNumberMaker {
-	// 初級1の場合：Lv + (lesson * 100) + part
-	// 初級2の場合：(Lv * 1000) + (lesson * 100) + part
+public class UserNumberGenerator {
+	// 初級1の場合：  レベル + (課 × 100) + 回
+	// 初級2の場合：  (レベル * 1000) + (課 × 100) + 回
 	
-	public int numberMaker(UserSetting userSetting) {
+	public int userNumberGenerator(UserSetting userSetting) {
 		
 		int userNumber;
 		int userLvNumber, userLessonNumber, userPartNumber;
-	
 		
 		if (userSetting.getLv() == 2) {
 			userLvNumber = (userSetting.getLv()) * 1000;

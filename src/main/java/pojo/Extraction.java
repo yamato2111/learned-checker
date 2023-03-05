@@ -17,15 +17,15 @@ public class Extraction {
 	public List<String> extraction(String sentence) {
 	    Tokenizer tokenizer = new Tokenizer();
 	    List<Token> tokens = tokenizer.tokenize(sentence);
-	    List<String> resultList = new ArrayList<>();
+	    List<String> extractionResultList = new ArrayList<>();
 	    
 	    // 抽出対象にあたる単語のみリストに追加
 	    for (Token token : tokens) {
 	    	if (Arrays.asList(posArray).contains(token.getPartOfSpeechLevel1())) {
-	    		resultList.add(token.getBaseForm());
+	    		extractionResultList.add(token.getBaseForm());
 	    	}
 	    }
-	    return resultList;
+	    return extractionResultList;
 	}
 
 }
