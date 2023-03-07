@@ -15,6 +15,8 @@ public class Compar {
 		List<ResultData> resultList = new ArrayList<>();
 
 		try {
+			System.out.println("extractionResult:" + extractionResult);
+			System.out.println("userSetting:" + userSetting.getLv()+ "/" + userSetting.getLesson() + "/" + userSetting.getPart());
 			for (String word : extractionResult) {
 				// インスタンス生成
 				ResultData resultData = new ResultData();

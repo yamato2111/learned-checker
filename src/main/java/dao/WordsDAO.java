@@ -21,6 +21,7 @@ public class WordsDAO extends DAO {
 			dbdata.setLv(rs.getInt("Lv"));
 			dbdata.setLesson(rs.getInt("lesson"));
 			dbdata.setPart(rs.getInt("part"));
+			dbdata.setNumber(rs.getInt("DBnumber"));
 		} else {
 			// TODO データなしの結果を返す処理
 		}
