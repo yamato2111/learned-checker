@@ -1,5 +1,9 @@
 package check;
 
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +14,8 @@ import bean.ResultData;
 import bean.UserSetting;
 import pojo.Compar;
 import pojo.Extraction;
+import pojo.TunedData;
+import pojo.UserSentenceTuner;
 import tool.Action;
 
 public class SetUserInputAction extends Action {
@@ -30,8 +36,14 @@ public class SetUserInputAction extends Action {
         userSetting.setPart(userInputPart);
         
         // 比較対象の単語の抽出
+        Path path = Paths.get("C:\\pleiades-2022-12-java-win-64bit-jre_20230124\\workspace\\test\\src\\test\\testword.csv");
+        List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
+        
+        UserSentenceTuner tuner = new UserSentenceTuner();
+        TunedData tunedData = tuner.sentenceTuner(sentence, lines);
+        
         Extraction extract = new Extraction();
-        List<String> extractionResult = extract.extraction(sentence);
+        List<String> extractionResult = extract.extraction(tunedData.tunedSentence, tunedData.tunedList);
         
         // 比較処理
         Compar comp = new Compar();
