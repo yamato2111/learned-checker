@@ -16,7 +16,7 @@ public class Entry extends HttpServlet {
 		) throws ServletException, IOException {
 		try {
 			request.setCharacterEncoding("UTF-8");
-			String path = "/WEB-INF/check/set-sentence.jsp";
+			String path = "/WEB-INF/entry/login-in.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 			dispatcher.forward(request, response);
 		} catch(Exception e) {

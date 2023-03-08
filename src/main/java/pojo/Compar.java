@@ -5,7 +5,7 @@ package pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.DataFromDb;
+import bean.DataFromDB;
 import bean.ResultData;
 import bean.UserSetting;
 import dao.WordsDAO;
@@ -15,14 +15,12 @@ public class Compar {
 		List<ResultData> resultList = new ArrayList<>();
 
 		try {
-			System.out.println("extractionResult:" + extractionResult);
-			System.out.println("userSetting:" + userSetting.getLv()+ "/" + userSetting.getLesson() + "/" + userSetting.getPart());
 			for (String word : extractionResult) {
 				// インスタンス生成
 				ResultData resultData = new ResultData();
 				WordsDAO dao = new WordsDAO();
-				DataFromDb dataFromDb = dao.search(word);
-				int dbNumber = dataFromDb.getNumber();
+				DataFromDB dataFromDB = dao.search(word);
+				int dbNumber = dataFromDB.getNumber();
 				
 				UserNumberGenerator unGenerator = new UserNumberGenerator();
 				
@@ -31,10 +29,11 @@ public class Compar {
 				boolean checkResult = Checker.isAlreadyLearned(userNumber, dbNumber);
 				
 				resultData.setName(word);
-				resultData.setLv(dataFromDb.getLv());
-				resultData.setLesson(dataFromDb.getLesson());
-				resultData.setPart(dataFromDb.getPart());
+				resultData.setLv(dataFromDB.getLv());
+				resultData.setLesson(dataFromDB.getLesson());
+				resultData.setPart(dataFromDB.getPart());
 				resultData.setIsAlreadyLeaned(checkResult);
+				resultData.setIsExistsInDB(dataFromDB.getIsExists());
 				resultList.add(resultData);
 			}
 		} catch (Exception e) {

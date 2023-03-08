@@ -7,7 +7,7 @@ public class ResultData implements java.io.Serializable {
     private int lesson;
     private int part;
     private boolean isAlreadyLearned;
-
+    private boolean isExistsInDB;
 
     // getter
     public String getName() {
@@ -28,6 +28,10 @@ public class ResultData implements java.io.Serializable {
     
     public boolean getIsAlreadyLeaned() {
     	return isAlreadyLearned;
+    }
+    
+    public boolean getIsExistsInDB() {
+    	return isExistsInDB;
     }
 
     
@@ -50,6 +54,10 @@ public class ResultData implements java.io.Serializable {
     
     public void setIsAlreadyLeaned(boolean isAlreadyLearned) {
     	this.isAlreadyLearned = isAlreadyLearned;
+    }
+    
+    public void setIsExistsInDB(boolean isExistsInDB) {
+    	this.isExistsInDB = isExistsInDB;
     }
 }
 

@@ -1,12 +1,13 @@
 package bean;
 
-public class DataFromDb implements java.io.Serializable {
+public class DataFromDB implements java.io.Serializable {
 	
 		private String name;
 	    private int lV;
 	    private int lesson;
 	    private int part;
 	    private int number;
+	    private boolean isExists;
 
 	    public String getName() {
 	        return name;
@@ -28,6 +29,10 @@ public class DataFromDb implements java.io.Serializable {
 	    	return number;
 	    }
 	    
+	    public boolean getIsExists() {
+	    	return isExists;
+	    }
+	    
 	    public void setName(String name) {
 	        this.name = name;
 	    }
@@ -47,4 +52,10 @@ public class DataFromDb implements java.io.Serializable {
 	    public void setNumber(int number) {
 	    	this.number = number;
 	    }
+	    
+	    public void setIsExists(boolean isExists) {
+	    	this.isExists = isExists;
+	    }
+	    
+	    
 }

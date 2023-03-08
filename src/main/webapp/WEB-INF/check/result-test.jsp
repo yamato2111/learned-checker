@@ -38,5 +38,17 @@ ${userSetting.getPart()}回目
 </tr>
 </c:forEach>
 </table>
+
+<c:forEach var="result" items="${resultList}">
+	<p>${result.getName()}</p>  
+	<p><c:if test="${result.getIsExistsInDB() == false}">存在しねえ</c:if></p>
+</c:forEach>
+
+
+
+
+
+
+
 </body>
 </html>
