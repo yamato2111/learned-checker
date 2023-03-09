@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
 <title>word checker</title>
 </head>
 <body>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
+
 
 <div class="top">
 <h1>授業実施時のレベルを選択</h1>

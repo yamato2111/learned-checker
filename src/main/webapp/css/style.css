@@ -1,0 +1,13 @@
+h1 {
+    color: lightslategrey;
+}
+
+body {
+    text-align: center;
+    color: azure;
+}
+
+p {
+	color: blue;
+	font-size: 30px;
+}
