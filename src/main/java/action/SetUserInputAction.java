@@ -1,4 +1,4 @@
-package check;
+package action;
 
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -10,12 +10,12 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import analysis.Extraction;
+import analysis.TunedData;
+import analysis.UserSentenceTuner;
 import bean.ResultData;
 import bean.UserSetting;
-import pojo.Compar;
-import pojo.Extraction;
-import pojo.TunedData;
-import pojo.UserSentenceTuner;
+import checker.Compar;
 import tool.Action;
 
 public class SetUserInputAction extends Action {

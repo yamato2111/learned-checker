@@ -1,6 +1,6 @@
 // ユーザが入力した文から、比較対象の品詞に該当する単語のみを抽出する
 
-package pojo;
+package analysis;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,7 +11,7 @@ import com.atilika.kuromoji.ipadic.Tokenizer;
 public class Extraction {
 
 	// 抽出対象の品詞
-	String[] posArray = {"名詞", "形容詞", "動詞", "連体詞", "副詞"}; //TODO: プロパティファイルに移す
+	final private String[] POS_ARRAY = {"名詞", "形容詞", "動詞", "連体詞", "副詞"}; //TODO: プロパティファイルに移す
 
 	public List<String> extraction(String sentence, List<String> extractionResultList) {
 		Tokenizer tokenizer = new Tokenizer();
@@ -19,7 +19,7 @@ public class Extraction {
 		List<Token> tokens = tokenizer.tokenize(sentence);
 		// 抽出対象にあたる単語のみリストに追加
 		for (Token token : tokens) {
-			if (Arrays.asList(posArray).contains(token.getPartOfSpeechLevel1())) {
+			if (Arrays.asList(POS_ARRAY).contains(token.getPartOfSpeechLevel1())) {
 				extractionResultList.add(token.getBaseForm());
 			}
 		}

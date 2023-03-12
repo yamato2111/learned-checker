@@ -1,4 +1,4 @@
-package pojo;
+package checker;
 
 public class Checker {
 	public static boolean isAlreadyLearned(int userNumber, int dbNumber) {

@@ -1,13 +1,58 @@
-h1 {
-    color: lightslategrey;
-}
-
 body {
-    text-align: center;
-    color: azure;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Ubuntu', sans-serif;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#99e379+0,7db9e8+100 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99e379', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+    font-size: 16px;
+	background: #dcdcdc;
+	color: #444444;
 }
 
-p {
-	color: blue;
-	font-size: 30px;
+.loginwrap {
+  margin-top: 120px;
+  justify-content: center;
+  align-items: center;
+}
+.logincontent {
+	display: flex;
+	flex: wrap;
+	width: 200px;
+	height: 150px;
+	color: #FFF2E6;
+	padding:1em;
+  	margin: 20px;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	outline: none;
+}
+.logintitle {
+	font-size: 36px;
+}
+input {
+	display: block;
+	width: 200px;
+	margin-top: 5px;
+	padding: 15px;
+	outline: none;
+	border: none;
+    font-size: 16px;
+}
+.loginbtn {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size     : 14pt;        /* 文字サイズ */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 10px 30px;   /* 余白       */
+  background    : #111111;     /* 背景色     */
+  color         : #FFFFFF;     /* 文字色     */
+  opacity       : 1;           /* 透明度     */
+  transition    : .2s;         /* なめらか変化 */
+}
+.loginbtn:hover {
+  opacity       : 0.2;         /* カーソル時透明度 */
 }

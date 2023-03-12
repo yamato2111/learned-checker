@@ -1,0 +1,36 @@
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+input[type="text"] {
+	font-size: 150%;
+}
+body{
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#99e379+0,7db9e8+100 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99e379', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
+    font-size: 16px;
+	text-align: center;
+	background: #dcdcdc;
+	color: #333333;
+	padding: 4em;
+	font-family: 'Sawarabi Gothic', sans-serif;}
+p {
+	font-size: 18px;
+}
+
+.submitbtn {
+	display: block;
+	width: 100%;
+	margin-top: 5px;
+	padding: 10px;
+	outline: none;
+	border: none;
+    font-size: 16px;
+    background: #333333;
+    color: white;
+}
+.submitbtn:hover {
+	opacity: 0.7;
+}

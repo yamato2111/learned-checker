@@ -1,6 +1,6 @@
 // ユーザ入力情報と、該当するDBデータを比較して既習、未習を判定する
 
-package pojo;
+package checker;
 
 import java.util.ArrayList;
 import java.util.List;
