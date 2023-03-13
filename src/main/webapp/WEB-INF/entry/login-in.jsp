@@ -7,14 +7,13 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
-<title>is already learned?</title>
+<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+<title>既習 OR DIE</title>
 </head>
 <body>
-<div class="spacebox"></div>
 <div class="loginwrap">
-<h1 class=logintitle>is already learned?</h1>
 <div class="logincontent">
+
 <form action="action.Login.action" method="post">
 <div class="txtbox">
 <p><input type="text" name="name" placeholder="username" required /></p>

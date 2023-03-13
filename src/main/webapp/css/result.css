@@ -1,0 +1,35 @@
+@charset "UTF-8";
+* {
+	text-align: center;
+	font-family: 'Kiwi Maru', serif;
+}
+.wrap {
+  display: flex;
+  flex-flow: column;
+  margin-top: 48px;
+  justify-content: center;
+  align-items: center;
+}
+body {
+	font-size: 16px;
+	background: #ffffff;
+	color: #015db2;
+}
+p {
+	font-size: 22px;
+}
+th, td {
+	border: solid 1.2px;
+	padding: 10px;
+}
+th {
+	color: #ffffff;
+	background-color: #015db2;
+}
+ 
+td {
+    text-align:  center;        /* 文字の揃え位置指定 */
+}
+table {
+    border-collapse:  collapse;     /* セルの線を重ねる */
+}

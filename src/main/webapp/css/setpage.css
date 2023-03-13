@@ -1,25 +1,50 @@
 
 .container {
 	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+input {
+	border: none;
+    background-color:#F0F8FF;
+}
+input[type="text"] {
+	font-size: 100%;
+	width: 100%;
+}
+body{
+    font-size: 16px;
+	text-align: center;
+	background: #ffffff;
+	color: #015db2;
+	padding: 4em;
+	font-family: 'Kiwi Maru', serif;
+}
+.title {
+	justify-content: center;
+	height: 50px;
+	padding: 12px;
+	font-size: 12px;
+	color: #015db2;
+}
+.level {
+	font-size: 20px;
+	margin-top: 8px;
+}
+.lesson-part {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 22px;
+	margin-right: 12px;
+	margin-top: 8px;
+}
+.sentence {
 	justify-content: center;
 	align-items: center;
 }
-input[type="text"] {
-	font-size: 150%;
-}
-body{
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#99e379+0,7db9e8+100 */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99e379', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
-    font-size: 16px;
-	text-align: center;
-	background: #dcdcdc;
-	color: #333333;
-	padding: 4em;
-	font-family: 'Sawarabi Gothic', sans-serif;}
-p {
-	font-size: 18px;
-}
-
 .submitbtn {
 	display: block;
 	width: 100%;
@@ -28,8 +53,9 @@ p {
 	outline: none;
 	border: none;
     font-size: 16px;
-    background: #333333;
-    color: white;
+    background: #193b73;
+    color: #ffffff;
+    font-family: 'Kiwi Maru', serif;
 }
 .submitbtn:hover {
 	opacity: 0.7;
