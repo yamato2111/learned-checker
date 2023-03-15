@@ -14,7 +14,7 @@
 <div class="loginwrap">
 <div class="logincontent">
 
-<form action="action.Login.action" method="post">
+<form action="action.Enter.action" method="post">
 <div class="txtbox">
 <p><input type="text" name="name" placeholder="username" required /></p>
 <p><input type="password" name="password" placeholder="password" required /></p>

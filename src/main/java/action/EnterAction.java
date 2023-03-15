@@ -8,7 +8,7 @@ import bean.User;
 import dao.LoginDAO;
 import tool.Action;
 
-public class LoginAction extends Action {
+public class EnterAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		HttpSession session = request.getSession();

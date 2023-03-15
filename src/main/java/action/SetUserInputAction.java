@@ -36,7 +36,7 @@ public class SetUserInputAction extends Action {
         userSetting.setPart(userInputPart);
         
         // 比較対象の単語の抽出
-        Path path = Paths.get("C:\\pleiades-2022-12-java-win-64bit-jre_20230124\\workspace\\testapp\\src\\main\\webapp\\WEB-INF\\tuningwords.csv");
+        Path path = Paths.get("C:\\pleiades-2022-12-java-win-64bit-jre_20230124\\workspace\\testapp\\src\\main\\java\\properties\\tuningwords.csv");
         List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
         
         UserSentenceTuner tuner = new UserSentenceTuner();

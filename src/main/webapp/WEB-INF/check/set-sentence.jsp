@@ -16,6 +16,7 @@
 </div>
 <div class="container">
 <form action="action.SetUserInput.action" method="post">
+
 <div class="level">
 初級1<input type="radio" name="level" value="1" required><br>
 初級2<input type="radio" name="level" value="2"  required>
